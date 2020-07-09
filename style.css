@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    margin: auto;
+    max-width: 1500px;
+}
+
+h1 {
+    margin: 25px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+h3 {
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: 24px;
+}
+
+h4 {
+    text-align: center;
+}
+
+
+
+.health-bars {
+    margin:auto;
+
+    width: 90%;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.health-bar {
+    margin: auto;
+    height: 50px;
+    width: 49%;
+    background-color: #f0f0f0;
+}
+
+.health-bar-left {
+    float: left;
+}
+
+.health-bar-right {  
+    float: right;
+}
+
+.health {
+    width: 100%;
+    height: 100%;
+    background-color: #FF0000;
+}
+
+.focus-bar {
+    height: 18px;
+    margin-top: 5px;
+    background-color: #f0f0f0;
+}
+.focus {
+    color: white;
+    background-color: #1873CC;
+    width: 50%;
+}
