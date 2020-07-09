@@ -125,6 +125,9 @@ h4 {
 .btn-success {
     background-color: #28a745;
 }
+.btn-info {
+    background-color: #17a2b8;
+}
 
 .btn-warning {
     background-color: #ffc107;
