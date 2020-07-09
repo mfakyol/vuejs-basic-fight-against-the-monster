@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-        <h1>Fight Against the Monster</h1>
-      
-        <div class="health-bars">
-            <div class="name-bar">
-                <h3>You</h3>
-                <h3>Monster</h3>
-    
-            </div>
-            <div class="health-bar health-bar-left">
-                <div class="health">
-                    <h2>100%</h2>
-                </div>
-                <div class="focus-bar">
-                    <div class="focus">
-                        <h4>50%</h4>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="health-bar health-bar-right">
-                <div  class="health">
-                    <h2>100%</h2>
-                </div>
-                <div class="focus-bar">
-                    <div class="focus">
-                        <h4>50%</h4>
-                    </div>
-                </div>
-            </div>
+      <h1>Fight Against the Monster</h1>
+      <div class="health-bars">
+        <div class="name-bar">
+          <h3>You</h3>
+          <h3>Monster</h3>
         </div>
+        <div class="health-bar health-bar-left">
+          <div class="health">
+            <h2>100%</h2>
+          </div>
+          <div class="focus-bar ">
+            <div class="focus">
+              <h4>50%</h4>
+            </div>
+          </div>
+        </div>
+        <div class="health-bar health-bar-right">
+          <div class="health">
+            <h2>100%</h2>
+          </div>
+          <div class="focus-bar">
+            <div class="focus">
+              <h4>50%</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-group">
+         <div>
+            <button class="btn btn-primary">Start Game</button></div>
+         <div>
+            <button class="btn btn-danger">Attack</button>
+            <button class="btn btn-primary">Focused Attack</button>
+            <button class="btn btn-success">Heal</button>
+            <button class="btn btn-warning">Focused Heal</button>
+            <button class="btn btn-dark">Surrender</button>
+         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

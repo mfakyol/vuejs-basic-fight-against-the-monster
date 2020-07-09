@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
 #app {
     margin: auto;
@@ -36,9 +41,7 @@ h4 {
 
 .health-bars {
     margin:auto;
-
     width: 90%;
-
     padding-left: 10px;
     padding-right: 10px;
 
@@ -74,3 +77,63 @@ h4 {
     background-color: #1873CC;
     width: 50%;
 }
+
+.button-group {
+    margin: auto;
+    width: 90%;
+    background-color: #f0f0f0;
+    margin-top: 150px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.btn {
+    text-decoration: none;
+    margin-left: 10px;
+    min-width: 120px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    border-color: white;
+    background-color: black;
+
+    padding: 10px;
+}
+.btn:hover {
+    cursor: pointer;
+    opacity: .9;
+}
+.btn:focus {
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-warning {
+    background-color: #f0ad4e;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+}
+
+.btn-dark {
+    background-color: #343a40;
+}
+.btn-muted {
+    background-color: #6c757d;
+}
+
