@@ -37,8 +37,6 @@ h4 {
     text-align: center;
 }
 
-
-
 .health-bars {
     margin:auto;
     width: 90%;
@@ -96,7 +94,7 @@ h4 {
     color: white;
     font-size: 16px;
     font-weight: 500;
-    border-radius: 5px;
+    border-radius: 7px;
     border-color: white;
     background-color: black;
 
@@ -136,7 +134,7 @@ h4 {
 .btn-dark {
     background-color: #343a40;
 }
-.btn-muted {
+.btn_muted {
     background-color: #6c757d;
 }
 

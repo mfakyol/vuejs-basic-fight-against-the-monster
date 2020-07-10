@@ -5,51 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+   
     <title>Document</title>
   </head>
   <body>
     <div id="app">
       <h1>Fight Against the Monster</h1>
-      <div class="health-bars">
+      <div v-show="isStarted" class="health-bars">
         <div class="name-bar">
           <h3>You</h3>
           <h3>Monster</h3>
         </div>
         <div class="health-bar health-bar-left">
-          <div class="health">
-            <h2>100%</h2>
+          <div :style="playerHealhtBarWidth" class="health">
+            <h2>{{playerHealth}}</h2>
           </div>
           <div class="focus-bar ">
-            <div class="focus">
-              <h4>50%</h4>
+            <div :style="playerFocusBarWidth" class="focus">
+              <h4>{{playerFocus}}</h4>
             </div>
           </div>
         </div>
         <div class="health-bar health-bar-right">
-          <div class="health">
-            <h2>100%</h2>
+          <div :style="monsterHealhtBarWidth" class="health">
+            <h2>{{monsterHealth}}</h2>
           </div>
           <div class="focus-bar">
-            <div class="focus">
-              <h4>50%</h4>
+          <div :style="monsterFocusBarWidth" class="focus">
+              <h4>{{monsterFocus}}</h4>
             </div>
           </div>
         </div>
       </div>
       <div class="button-group">
-         <div>
-            <button class="btn btn-primary">Start Game</button></div>
-         <div>
-            <button class="btn btn-danger">Attack</button>
-            <button class="btn btn-primary">Focused Attack</button>
-            <button class="btn btn-warning">Promotion</button>
-            <button class="btn btn-success">Heal</button>
-            <button class="btn btn-info">Focused Heal</button>
-            <button class="btn btn-primary">Gather Focus</button>
-            <button class="btn btn-dark">Surrender</button>
+         <div v-show="!isStarted">
+            <button @click="startGame" class="btn btn-primary">Start Game</button></div>
+         <div v-show="isStarted">
+            <button @click="attack" class="btn btn-danger">Attack</button>
+         <button @click="focusedAttack" :class="{btn_muted:!focusActionOpen}" :disabled="!focusActionOpen" class="btn btn-primary">Focused Attack</button>
+            <button @click="promotion" :class="{btn_muted:!isPromotionOpen}" :disabled="!isPromotionOpen" class="btn btn-warning">Promotion</button>
+            <button @click="heal" class="btn btn-success">Heal</button>
+            <button @click="focusedHeal" :class="{btn_muted:!focusActionOpen}" :disabled="!focusActionOpen" class="btn btn-info">Focused Heal</button>
+            <button @click="gatherFocus" class="btn btn-primary">Gather Focus</button>
+            <button @click="surrender" class="btn btn-dark">Surrender</button>
          </div>
       </div>
     </div>
+     <script src="app.js"></script>
   </body>
 </html>
