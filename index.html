@@ -11,6 +11,7 @@
   <body>
     <div id="app">
       <h1>Fight Against the Monster</h1>
+      <h1 v-show="gameStatus">{{gameStatus}}</h1>
       <div v-show="isStarted" class="health-bars">
         <div class="name-bar">
           <h3>You</h3>

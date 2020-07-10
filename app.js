@@ -13,7 +13,9 @@ const vm = new Vue({
         monsterFocus:25,
         focusActionOpen:false,
         isPromotionOpen:false,
-        log: []
+        log: [],
+        gameStatus:""
+        
     },
     methods: {
         startGame: function(){
@@ -29,8 +31,9 @@ const vm = new Vue({
             this.monsterBaseDamage=10;
             this.monsterBaseHeal=14;
             this.isStarted=true;
-            focusActionOpen=false;
-            isPromotionOpen=false;
+            this.focusActionOpen=false;
+            this.isPromotionOpen=false;
+            this.gameStatus="";
 
         },
         surrender: function(){
@@ -111,7 +114,9 @@ const vm = new Vue({
         playerHealth: function(value){
             if(value<=0){
                 this.playerHealth=0;
-                //game over lose
+                this.gameStatus="You Lost";
+                this.isStarted=false;
+
             }
             else if(value>100){
                 this.playerHealth=100;
@@ -129,6 +134,8 @@ const vm = new Vue({
             if(value<=0){
                 console.log("asds")
                 this.monsterHealth=0;
+                this.gameStatus="You Win"
+                this.isStarted=false;
             }
             else if(value>100){
                 this.monsterHealth=100;

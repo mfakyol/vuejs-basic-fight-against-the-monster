@@ -38,6 +38,7 @@ h4 {
 }
 
 .health-bars {
+    height: 120px;
     margin:auto;
     width: 90%;
     padding-left: 10px;
@@ -80,7 +81,7 @@ h4 {
     margin: auto;
     width: 90%;
     background-color: #f0f0f0;
-    margin-top: 150px;
+    
     padding: 15px;
     display: flex;
     justify-content: center;
