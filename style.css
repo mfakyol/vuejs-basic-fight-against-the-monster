@@ -85,6 +85,7 @@ h4 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    z-index: -1;
 
 }
 .btn {
@@ -97,7 +98,6 @@ h4 {
     border-radius: 7px;
     border-color: white;
     background-color: black;
-
     padding: 10px;
 }
 .btn:hover {
@@ -136,5 +136,42 @@ h4 {
 }
 .btn_muted {
     background-color: #6c757d;
+}
+.btn_muted:hover {
+    cursor: default;
+    opacity: 1;
+}
+
+.tooltip {
+    position: relative;;
+}
+
+.tooltip .tooltiptext{
+    position: absolute;
+    visibility: hidden;
+
+}
+.tooltip:hover {
+    z-index: 2;
+}
+
+.tooltip:hover .tooltiptext {
+
+    width: 120px;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 10px;
+    background-color: black;
+    visibility: visible;
+    top: 120%;
+    left: -10px;
+}
+.tooltip .tooltiptext:after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 60px;
+    border: 10px solid;
+    border-color: transparent transparent black transparent;
 }
 

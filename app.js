@@ -5,6 +5,7 @@ const vm = new Vue({
         playerHealth: 100,
         monsterHealth: 100,
         playerBaseDamage: 12,
+        playerBonusDamageMultiplier: 5,
         monsterBaseDamage: 10,
         playerBaseHeal: 15,
         monsterBaseHeal: 14,

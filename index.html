@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css" />
-   
+
     <title>Document</title>
   </head>
   <body>
@@ -20,7 +20,7 @@
           <div :style="playerHealhtBarWidth" class="health">
             <h2>{{playerHealth}}</h2>
           </div>
-          <div class="focus-bar ">
+          <div class="focus-bar">
             <div :style="playerFocusBarWidth" class="focus">
               <h4>{{playerFocus}}</h4>
             </div>
@@ -31,26 +31,56 @@
             <h2>{{monsterHealth}}</h2>
           </div>
           <div class="focus-bar">
-          <div :style="monsterFocusBarWidth" class="focus">
+            <div :style="monsterFocusBarWidth" class="focus">
               <h4>{{monsterFocus}}</h4>
             </div>
           </div>
         </div>
       </div>
       <div class="button-group">
-         <div v-show="!isStarted">
-            <button @click="startGame" class="btn btn-primary">Start Game</button></div>
-         <div v-show="isStarted">
-            <button @click="attack" class="btn btn-danger">Attack</button>
-         <button @click="focusedAttack" :class="{btn_muted:!focusActionOpen}" :disabled="!focusActionOpen" class="btn btn-primary">Focused Attack</button>
-            <button @click="promotion" :class="{btn_muted:!isPromotionOpen}" :disabled="!isPromotionOpen" class="btn btn-warning">Promotion</button>
-            <button @click="heal" class="btn btn-success">Heal</button>
-            <button @click="focusedHeal" :class="{btn_muted:!focusActionOpen}" :disabled="!focusActionOpen" class="btn btn-info">Focused Heal</button>
-            <button @click="gatherFocus" class="btn btn-primary">Gather Focus</button>
-            <button @click="surrender" class="btn btn-dark">Surrender</button>
-         </div>
+        <div v-show="!isStarted">
+          <button @click="startGame" class="btn btn-primary">Start Game</button>
+        </div>
+        <div v-show="isStarted">
+          <button @click="attack" class="btn btn-danger tooltip">
+            Attack <span class="tooltiptext">{{playerBaseDamage+"-"+ (playerBaseDamage+playerBonusDamageMultiplier) + " Damage"}}</span>
+          </button>
+          <button
+            @click="focusedAttack"
+            :class="{btn_muted:!focusActionOpen}"
+            :disabled="!focusActionOpen"
+            class="btn btn-primary tooltip"
+          >
+            Focused Attack <span class="tooltiptext">{{2*playerBaseDamage+"-"+ (2*playerBaseDamage+2*playerBonusDamageMultiplier) + " Damage"}}</span>
+          </button>
+          <button
+            @click="promotion"
+            :class="{btn_muted:!isPromotionOpen}"
+            :disabled="!isPromotionOpen"
+            class="btn btn-warning tooltip"
+          >
+            Promotion <span class="tooltiptext">Increase Your Damage by 2 (Require 100 focus) </span>
+          </button>
+          <button @click="heal" class="btn btn-success tooltip">
+            Heal <span class="tooltiptext">Increase Your Health by 18 </span>
+          </button>
+          <button
+            @click="focusedHeal"
+            :class="{btn_muted:!focusActionOpen}"
+            :disabled="!focusActionOpen"
+            class="btn btn-info tooltip"
+          >
+            Focused Heal <span class="tooltiptext">Increase Your Health by 36 (Require 55 focus) </span>
+          </button>
+          <button @click="gatherFocus" class="btn btn-primary tooltip">
+            Gather Focus <span class="tooltiptext">Increase Your Focus by 30 (Cannot Attack) </span>
+          </button>
+          <button @click="surrender" class="btn btn-dark tooltip">
+            Surrender <span class="tooltiptext">  Give up </span>
+          </button>
+        </div>
       </div>
     </div>
-     <script src="app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
