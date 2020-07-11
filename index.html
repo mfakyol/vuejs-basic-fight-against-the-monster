@@ -18,21 +18,21 @@
           <h3>Monster</h3>
         </div>
         <div class="health-bar health-bar-left">
-          <div :style="playerHealhtBarWidth" class="health">
+          <div :style="playerHealhtBarWidth" class="animation health">
             <h2>{{playerHealth}}</h2>
           </div>
           <div class="focus-bar">
-            <div :style="playerFocusBarWidth" class="focus">
+            <div :style="playerFocusBarWidth" class="animation focus">
               <h4>{{playerFocus}}</h4>
             </div>
           </div>
         </div>
         <div class="health-bar health-bar-right">
-          <div :style="monsterHealhtBarWidth" class="health">
+          <div :style="monsterHealhtBarWidth" class="animation health">
             <h2>{{monsterHealth}}</h2>
           </div>
           <div class="focus-bar">
-            <div :style="monsterFocusBarWidth" class="focus">
+            <div :style="monsterFocusBarWidth" class="animation focus">
               <h4>{{monsterFocus}}</h4>
             </div>
           </div>
@@ -52,7 +52,7 @@
             :disabled="!focusActionOpen"
             class="btn btn-primary tooltip"
           >
-            Focused Attack <span class="tooltiptext">{{2*playerBaseDamage+"-"+ (2*playerBaseDamage+2*playerBonusDamageMultiplier) + " Damage"}}</span>
+            Focused Attack <span class="tooltiptext">{{2*playerBaseDamage+"-"+ (2*playerBaseDamage+2*playerBonusDamageMultiplier) + " Damage"}} (Require 55 focus) </span>
           </button>
           <button
             @click="promotion"
@@ -81,6 +81,21 @@
           </button>
         </div>
       </div>
+
+        <ul class="logs">
+          <li v-show="logs.length>0">
+            <div class="player-log-header">Player</div>
+            <div class="turn-log-header">Turn</div>
+            <div class="monster-log-header">Monster</div>
+            <hr>
+          </li>
+          <li class="log-item" v-for="log in logs">
+            <div class="player-log-item">{{log.playerTurnLog}}</div>
+            <div class="turn-log-item">{{log.turn}}</div>
+            <div class="monster-log-item">{{log.monsterTurnLog}}</div>
+          </li>
+        </ul>
+
     </div>
     <script src="app.js"></script>
   </body>

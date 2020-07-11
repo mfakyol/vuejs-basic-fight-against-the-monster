@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .clearfix::after {
     content: "";
@@ -37,6 +38,10 @@ h4 {
     text-align: center;
 }
 
+.animation {
+    transition: width 2s ease-in-out;
+}
+
 .health-bars {
     height: 120px;
     margin:auto;
@@ -45,6 +50,7 @@ h4 {
     padding-right: 10px;
 
 }
+
 .health-bar {
     margin: auto;
     height: 50px;
@@ -71,6 +77,7 @@ h4 {
     margin-top: 5px;
     background-color: #f0f0f0;
 }
+
 .focus {
     color: white;
     background-color: #1873CC;
@@ -89,6 +96,7 @@ h4 {
     z-index: -1;
 
 }
+
 .btn {
     text-decoration: none;
     margin-left: 10px;
@@ -101,10 +109,12 @@ h4 {
     background-color: black;
     padding: 10px;
 }
+
 .btn:hover {
     cursor: pointer;
     opacity: .9;
 }
+
 .btn:focus {
     outline: none;
 }
@@ -124,6 +134,7 @@ h4 {
 .btn-success {
     background-color: #28a745;
 }
+
 .btn-info {
     background-color: #17a2b8;
 }
@@ -135,9 +146,11 @@ h4 {
 .btn-dark {
     background-color: #343a40;
 }
+
 .btn_muted {
     background-color: #6c757d;
 }
+
 .btn_muted:hover {
     cursor: default;
     opacity: 1;
@@ -157,7 +170,6 @@ h4 {
 }
 
 .tooltip:hover .tooltiptext {
-
     width: 120px;
     border-radius: 5px;
     font-size: 12px;
@@ -174,5 +186,74 @@ h4 {
     left: 60px;
     border: 10px solid;
     border-color: transparent transparent black transparent;
+}
+
+.logs {
+    list-style: none;
+    margin:auto;
+    margin-top: 20px;
+    width: 90%;
+
+}
+.log-item {
+    margin-top:10px ;
+    min-height: 40px;
+    font-weight: 700;
+}
+
+.player-log-item {
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 45%;
+    float: left;
+    height: 40px;
+    border: 1px blue solid;
+}
+
+.turn-log-item {
+    border-bottom: 1px green solid;
+    border-top: 1px green solid;
+    height: 40px;
+    font-size: 26px;
+    float: left;
+    text-align: center;
+    width: 10%;
+}
+
+.monster-log-item {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    float: right;
+    height: 40px;
+    text-align: center;
+    width: 45%;
+    border: 1px red solid;
+
+}
+
+.player-log-header {
+    float: left;
+    width: 45%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.turn-log-header {
+    float: left;
+    width: 10%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.monster-log-header {
+    float: right;
+    width: 45%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+
 }
 
