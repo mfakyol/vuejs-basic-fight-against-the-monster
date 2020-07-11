@@ -82,7 +82,7 @@ const vm = new Vue({
       this.playerHealth += 40;
       this.playerBaseDamage += 4;
       this.playerFocus = 0;
-      const playerTurnLog = `The Player promoted and spent 100 focus.`;
+      const playerTurnLog = `The Player promoted, healed 40 and spent 100 focus.`;
       const monsterTurnLog = this.monsterTurn();
       this.log(this.turn++, playerTurnLog, monsterTurnLog);
     },
@@ -137,7 +137,7 @@ const vm = new Vue({
     monsterHeal: function () {
       const heal = this.monsterBaseHeal;
       this.monsterHealth += this.monsterFocus -= 55;
-      return ` The Monster damaged ${heal} and spent 55 focus.`;
+      return ` The Monster healed ${heal} and spent 55 focus.`;
     },
   },
   computed: {
