@@ -39,7 +39,7 @@ h4 {
 }
 
 .animation {
-    transition: width 2s ease-in-out;
+    transition: width 1s ease-in-out;
 }
 
 .health-bars {
@@ -256,4 +256,3 @@ h4 {
     font-weight: 700;
 
 }
-
